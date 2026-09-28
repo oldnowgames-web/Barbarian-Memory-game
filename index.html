@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbarian Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="fullscreen-btn" onclick="toggleFullScreen()">⛶</button>
+
+    <div id="start-screen" class="screen">
+        <img src="img/barbarian.png" alt="Barbarian Memory Game" class="title-image">
+        <button class="btn-primary" onclick="showDifficulty()">Iniciar Jornada</button>
+    </div>
+
+    <div id="difficulty-screen" class="screen" style="display: none;">
+        <h2>Escolha seu tempo</h2>
+        <div class="difficulty-options">
+            <button class="btn-option" onclick="startGame(60)">1 Minuto</button>
+            <button class="btn-option" onclick="startGame(120)">2 Minutos</button>
+            <button class="btn-option" onclick="startGame(180)">3 Minutos</button>
+            <button class="btn-option" onclick="startGame(240)">4 Minutos</button>
+        </div>
+    </div>
+
+    <div id="game-screen" class="game-container" style="display: none;">
+        <img src="img/barbarian.png" alt="Barbarian Memory Game" class="game-logo">
+        <div id="timer-display">Tempo: --:--</div>
+        <div class="memory-game" id="game-board"></div>
+        <button id="restart" class="btn-danger">Desistir</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
