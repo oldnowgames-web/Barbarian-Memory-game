@@ -127,8 +127,13 @@ function checkMatch() {
         matchedCount++;
         playSound('match');
         
+        // Adiciona a classe matched e MANTÉM a classe flip ativa
         card1.classList.add('matched');
         card2.classList.add('matched');
+        
+        // Remove os ouvintes de clique para evitar interações posteriores
+        card1.removeEventListener('click', flipCard);
+        card2.removeEventListener('click', flipCard);
         
         flippedCards = [];
 
@@ -146,6 +151,7 @@ function checkMatch() {
         card2.classList.add('wrong');
 
         setTimeout(() => {
+            // Em caso de erro, remove apenas as classes flip e wrong
             card1.classList.remove('flip', 'wrong');
             card2.classList.remove('flip', 'wrong');
             flippedCards = [];
